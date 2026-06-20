@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MegaLimpieza</title>
+
+<style>
+body{
+    margin:0;
+    background:#111111;
+    color:white;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+.header{
+    background:#1a1a1a;
+    padding:25px;
+    border-bottom:2px solid #d4af37;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:#1f1f1f;
+    border-radius:15px;
+    padding:20px;
+    margin-top:15px;
+    border:1px solid #333;
+}
+
+.cliente{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.btn{
+    width:100%;
+    border:none;
+    padding:15px;
+    margin-top:10px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.presente{
+    background:#1f8f3a;
+    color:white;
+}
+
+.ausente{
+    background:#d97706;
+    color:white;
+}
+
+.posponer{
+    background:#2563eb;
+    color:white;
+}
+
+.estado{
+    margin-top:20px;
+    padding:15px;
+    border-radius:12px;
+    background:#222;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">MegaLimpieza</div>
+</div>
+
+<div class="container">
+
+    <h2>Hola Jose 👋</h2>
+
+    <p>Clientes pendientes de hoy</p>
+
+    <div class="card">
+
+        <div class="cliente">
+            🟢 San Babiles
+        </div>
+
+        <button class="btn presente"
+        onclick="registrar('Servicio firmado correctamente')">
+        Cliente presente
+        </button>
+
+        <button class="btn ausente"
+        onclick="registrar('Cliente ausente - Foto pendiente')">
+        Cliente ausente
+        </button>
+
+        <button class="btn posponer"
+        onclick="registrar('Servicio pospuesto')">
+        Posponer
+        </button>
+
+        <div id="resultado" class="estado"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+function registrar(texto){
+    const resultado=document.getElementById("resultado");
+    resultado.style.display="block";
+    resultado.innerHTML="✅ " + texto;
+}
+
+</script>
+
+</body>
+</html>
