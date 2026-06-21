@@ -123,7 +123,7 @@ body{
 const supabaseUrl = "https://gvngzwemntngwgonwlfq.supabase.co";
 const supabaseKey = "sb_publishable_OgGjV7elUGQMb1_wi6dQeg_5R76Pkdk";
 
-const supabase = window.supabase.createClient(
+const clienteSupabase = window.supabase.createClient(
     supabaseUrl,
     supabaseKey
 );
@@ -131,7 +131,7 @@ const supabase = window.supabase.createClient(
 console.log("Cliente Supabase creado");
     async function probarConexion() {
 
-    const { data, error } = await supabase
+    const { data, error } = await clienteSupabase
         .from("clientes")
         .select("*");
 
