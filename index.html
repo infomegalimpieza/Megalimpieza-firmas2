@@ -94,10 +94,10 @@ body{
 
     <div class="card">
 
-        <div class="cliente">
-            🟢 San Babiles
+        <div class="cliente" id="clienteActual">
+    Cargando...
         </div>
-
+        
         <button class="btn presente"
         onclick="registrar('Servicio firmado correctamente')">
         Cliente presente
@@ -137,6 +137,10 @@ console.log("Cliente Supabase creado");
 
     console.log("DATOS:", data);
     console.log("ERROR:", error);
+
+        if (data && data.length > 0) {
+    document.getElementById("clienteActual").innerHTML =
+        "🟢 " + data[0].nombre;
 
 }
 
