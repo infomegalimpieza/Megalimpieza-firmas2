@@ -129,7 +129,19 @@ const supabase = window.supabase.createClient(
 );
 
 console.log("Cliente Supabase creado");
-function registrar(texto){
+    async function probarConexion() {
+
+    const { data, error } = await supabase
+        .from("clientes")
+        .select("*");
+
+    console.log("DATOS:", data);
+    console.log("ERROR:", error);
+
+}
+
+probarConexion();
+    function registrar(texto){
     const resultado=document.getElementById("resultado");
     resultado.style.display="block";
     resultado.innerHTML="✅ " + texto;
